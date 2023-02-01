@@ -33,6 +33,11 @@ $ ./sdkmanager "system-images;android-31;default;x86_64"
 $ ./sdkmanager "system-images;android-31;google_apis;x86_64"
 $ ./sdkmanager "build-tools;31.0.0" "ndk-bundle" "platform-tools" "platforms;android-31" "tools"
 ```
+# Listar SDKs instalados
+
+```console
+$ sdkmanager --list_installed
+```
 
 # Colocar o Android SDK no PATH -> No final do arquivo /etc/profile
 
@@ -79,5 +84,5 @@ ou
 $ echo 'net.ipv6.conf.lo.disable_ipv6 = 1' >> /etc/sysctl.conf
 ou 
 $ echo 'net.ipv6.conf.eno1.disable_ipv6 = 1' >> /etc/sysctl.conf
-$sysctl -p
+$ sysctl -p
 ```
