@@ -4,6 +4,12 @@ $ apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
  ```
  * https://developer.android.com/studio/run/emulator-acceleration?hl=pt-br
 
+# Adicionar usuário ao grupo kvm
+
+```console
+gpasswd -a joao kvm
+```
+
 # Instalar o node
 
 ```console
@@ -23,6 +29,10 @@ $ mv Webstorm webstorm-latest
 ```
 
 # Instalar o android sdk
+
+* Baixar o commandline-tools na seção de download do android studio
+* https://developer.android.com/studio
+
 ```console
 $ mv cmdline-tools android_sdk
 $ cd android_sdk/cmdline-tools
