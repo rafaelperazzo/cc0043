@@ -36,7 +36,7 @@ $ ./sdkmanager "build-tools;31.0.0" "ndk-bundle" "platform-tools" "platforms;and
 
 # Colocar o Android SDK no PATH -> No final do arquivo /etc/profile
 
-```
+```console
 export ANDROID_HOME=/opt/android_sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME 
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -54,7 +54,7 @@ $ avdmanager list
 
 # Criar uma AVD
 
-```
+```console
 $ mkdir /shared/seuusername
 $ avdmanager -v create avd -f -n android_react -k "system-images;android-31;google_apis;x86_64" -c 2000M -p /shared/seuusername
 ```
