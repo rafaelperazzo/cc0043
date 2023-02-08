@@ -71,7 +71,7 @@ $ apt install snapd
 $ snap install webstorm --classic
 ```
 
-## PASSO 6: Reiciar a máquina ou encerrar a sessão
+## PASSO 6: Reiniciar a máquina ou encerrar a sessão
 
 > Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian 
 
