@@ -11,7 +11,7 @@ $ echo 'net.ipv6.conf.eno1.disable_ipv6 = 1' >> /etc/sysctl.conf
 $ sysctl -p
 ```
 
-# PASSO 2: 
+# PASSO 2: Instalar o NodeJs
 
 ```console
 $ cd /opt
@@ -67,5 +67,6 @@ $ snap install webstorm --classic
 
 # PASSO 6: Reiciar a máquina ou encerrar a sessão
 
-> Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/Debian
+> Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian 
+
 > Data: Fevereiro/2023
