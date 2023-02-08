@@ -1,4 +1,4 @@
-apt-get install openjdk-11-jre openjdk-11-jdk
+apt-get install openjdk-11-jre openjdk-11-jdk unzip
 echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf
 sysctl -p
 cd /opt
