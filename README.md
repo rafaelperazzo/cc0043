@@ -1,4 +1,8 @@
-# Passo 1: Desabilitar o IPv6
+# CC0043 - PROGRAMAÇÃO PARA DISPOSITIVOS MÓVEIS
+
+> Guia para preparação do ambiente no SO Linux.
+
+## Passo 1: Desabilitar o IPv6
 
 * https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html
 
@@ -11,7 +15,7 @@ $ echo 'net.ipv6.conf.eno1.disable_ipv6 = 1' >> /etc/sysctl.conf
 $ sysctl -p
 ```
 
-# PASSO 2: Instalar o NodeJs
+## PASSO 2: Instalar o NodeJs
 
 ```console
 $ cd /opt
@@ -22,7 +26,7 @@ $ mv node-v18.13.0-linux-x64 node-latest
 $ echo 'export PATH=$PATH:/opt/node-latest/bin' >> /etc/profile
 $ echo 'export PATH=$PATH:/opt/node-latest/bin' >> /etc/bash.bashrc
 ```
-# PASSO 3: Instalar o commandline-tools
+## PASSO 3: Instalar o commandline-tools
 
 ```console
 $ cd /opt
@@ -36,7 +40,7 @@ $ mv * latest
 $ cd latest/bin
 ```
 
-# PASSO 4: Instalar o SDK do Android
+## PASSO 4: Instalar o SDK do Android
 
 ```console
 $ cd /opt/android_sdk/cmdline-tools/latest/bin
@@ -54,7 +58,7 @@ $ echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools' >> /etc/bash.bashrc
 $ echo 'export PATH=$PATH:/opt/android_sdk/cmdline-tools/latest/bin' >> /etc/bash.bashrc
 ```
 
-# PASSO 5: Instalar o WebStorm
+## PASSO 5: Instalar o WebStorm
 
 * O primeiro comando apenas se a distribuição for o Linux Mint
 
@@ -65,7 +69,7 @@ $ apt install snapd
 $ snap install webstorm --classic
 ```
 
-# PASSO 6: Reiciar a máquina ou encerrar a sessão
+## PASSO 6: Reiciar a máquina ou encerrar a sessão
 
 > Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian 
 
