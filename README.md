@@ -70,3 +70,5 @@ $ snap install webstorm --classic
 > Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian 
 
 > Data: Fevereiro/2023
+
+> Baixar script: [SHELL SCRIPT](https://raw.githubusercontent.com/rafaelperazzo/cc0043/master/install.node.sh)
