@@ -1,3 +1,4 @@
+apt-get install openjdk-11-jre openjdk-11-jdk
 echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf
 sysctl -p
 cd /opt
@@ -7,8 +8,9 @@ cd node-v18.13.0-linux-x64
 mv node-v18.13.0-linux-x64 node-latest
 echo 'export PATH=$PATH:/opt/node-latest/bin' >> /etc/profile
 echo 'export PATH=$PATH:/opt/node-latest/bin' >> /etc/bash.bashrc
-#Baixar o commandlinetool.zip em /opt e depois
+
 cd /opt
+wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
 unzip commandlinetools-linux-9477386_latest.zip
 mkdir /opt/android_sdk
 mv cmdline-tools android_sdk
