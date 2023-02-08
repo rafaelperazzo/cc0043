@@ -14,13 +14,14 @@ gpasswd -a joao kvm
 
 ```console
 $ cd /opt
+$ wget https://nodejs.org/dist/v18.14.0/node-v18.14.0-linux-x64.tar.xz
 $ tar xvf node-v18.13.0-linux-x64.tar.xz
 $ mv node-v18.13.0-linux-x64 node-latest
 ```
 
 # Colocar o node no PATH
 ```console
-$ echo 'PATH="$PATH:/opt/node-latest"; export path' >> /etc/profile
+$ echo 'PATH="$PATH:/opt/node-latest/bin"; export path' >> /etc/profile
 ```
 # Instalar webstorm 
 ```console
