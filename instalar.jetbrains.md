@@ -116,6 +116,8 @@ sdkmanager --update
 sed -i 's/hw.keyboard = no/hw.keyboard = yes/g' /share/seunomeusuario/avd/config.ini
 ```
 
+![Imagem](https://i.stack.imgur.com/yjdw8.jpg)
+
 ### Desabilitar o IPV6
 
 * https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html
@@ -148,3 +150,11 @@ gpasswd -a joao kvm
 ```console
 sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /etc/sysctl.conf
 ```
+
+## OUTRAS INFORMAÇÕES
+
+> Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian 
+
+> Data: Fevereiro/2023
+
+> Baixar script: [SHELL SCRIPT](https://raw.githubusercontent.com/rafaelperazzo/cc0043/master/install.node.sh)
