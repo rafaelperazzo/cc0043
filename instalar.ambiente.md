@@ -113,7 +113,7 @@ sdkmanager --update
 * Considerando que o AVD foi instalado em /share/seunomeusuario:
 
 ```console
-sed -i 's/hw.keyboard = no/hw.keyboard = yes/g' /share/seunomeusuario/avd/config.ini
+sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' /share/seunomeusuario/avd/config.ini
 ```
 
 ![Imagem](https://i.stack.imgur.com/yjdw8.jpg)
@@ -150,6 +150,25 @@ gpasswd -a joao kvm
 ```console
 sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /etc/sysctl.conf
 ```
+
+## Extensões úteis para o VsCode
+
+* React Native Tools
+* Babel JavaScript
+* Flow Language Support
+* ESLint
+* Prettier – Code formatter
+* Auto Close Tag/Auto Complete Tag/Auto Rename Tag
+* Color Highlight
+* Git Blame
+* TO DO Highlight
+* Bracket Pair Colorizer
+* markdownlint
+* Settings Sync
+* Search node_modules
+* npm Intellisense
+* Code Spell Checker
+* change-case
 
 ## OUTRAS INFORMAÇÕES
 
