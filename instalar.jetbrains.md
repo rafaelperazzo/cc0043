@@ -1,66 +1,92 @@
-# Instalar KVM
- ```console
-$ apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
- ```
- * https://developer.android.com/studio/run/emulator-acceleration?hl=pt-br
+# Preparando seu ambiente Linux
 
-# Adicionar usuário ao grupo kvm
+## Pré-requisitos
+
+* Como root: Instalar o openjdk-11 e desabilitar o IPv6
 
 ```console
-gpasswd -a joao kvm
+apt-get install openjdk-11-jre openjdk-11-jdk unzip
+echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf
+sysctl -p
 ```
 
-# Instalar o node
+## 1. Instalar o node
 
 ```console
-$ cd /opt
-$ wget https://nodejs.org/dist/v18.14.0/node-v18.14.0-linux-x64.tar.xz
-$ tar xvf node-v18.13.0-linux-x64.tar.xz
-$ mv node-v18.13.0-linux-x64 node-latest
+cd /opt
+wget https://nodejs.org/dist/v18.14.0/node-v18.14.0-linux-x64.tar.xz
+tar xvf node-v18.14.0-linux-x64.tar.xz
+mv node-v18.14.0-linux-x64 node-latest
 ```
 
-# Colocar o node no PATH
+## 2. Colocar o node no PATH
+
 ```console
-$ echo 'PATH="$PATH:/opt/node-latest/bin"; export path' >> /etc/profile
-```
-# Instalar webstorm 
-```console
-$ tar xvzf webstorm.tar.gz
-$ mv Webstorm webstorm-latest
+echo "export PATH=$PATH:/opt/node-latest/bin" >> /etc/profile
+echo "export PATH=$PATH:/opt/node-latest/bin" >> /etc/bash.bashrc
 ```
 
-# Instalar o android sdk
+## 3. Instalar webstorm
+
+```console
+mv /etc/apt/preferences.d/nosnap.pref ~/root/nosnap.backup
+apt update
+apt install snapd
+snap install webstorm --classic
+```
+
+## 4. Instalar o android sdk
 
 * Baixar o commandline-tools na seção de download do android studio
 * https://developer.android.com/studio
 
 ```console
-$ mv cmdline-tools android_sdk
-$ cd android_sdk/cmdline-tools
-$ mkdir latest
-$ mv * latest
-$ cd latest/bin
-$ ./sdkmanager "system-images;android-31;default;x86_64"
-$ ./sdkmanager "system-images;android-31;google_apis;x86_64"
-$ ./sdkmanager "build-tools;31.0.0" "ndk-bundle" "platform-tools" "platforms;android-31" "tools"
+cd /opt
+wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+unzip commandlinetools-linux-9477386_latest.zip
+mkdir /opt/android_sdk
+mv cmdline-tools android_sdk
+cd android_sdk/cmdline-tools
+mkdir latest
+mv * latest
+cd latest/bin
+./sdkmanager "system-images;android-31;google_apis;x86_64"
+./sdkmanager "build-tools;31.0.0" "ndk-bundle" "platform-tools" "platforms;android-31" "tools"
 ```
-# Listar SDKs instalados
+
+## 5. Colocar o SDK do Android no PATH
 
 ```console
-$ sdkmanager --list_installed
+echo 'export ANDROID_HOME=/opt/android_sdk' >> /etc/profile
+echo 'export ANDROID_SDK_ROOT=$ANDROID_HOME' >> /etc/profile
+echo 'export PATH=$PATH:$ANDROID_HOME/emulator' >> /etc/profile
+echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools' >> /etc/profile
+echo 'export PATH=$PATH:/opt/android_sdk/cmdline-tools/latest/bin' >> /etc/profile
+echo 'export ANDROID_HOME=/opt/android_sdk' >> /etc/bash.bashrc
+echo 'export ANDROID_SDK_ROOT=$ANDROID_HOME' >> /etc/bash.bashrc
+echo 'export PATH=$PATH:$ANDROID_HOME/emulator' >> /etc/bash.bashrc
+echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools' >> /etc/bash.bashrc
+echo 'export PATH=$PATH:/opt/android_sdk/cmdline-tools/latest/bin' >> /etc/bash.bashrc
 ```
 
-# Colocar o Android SDK no PATH -> No final do arquivo /etc/profile
+## 6. Reiniciar a máquina
+
+## 7. Criar uma AVD
+
+* Considerando que você está usando uma máquina do Lab K05-s. 
 
 ```console
-export ANDROID_HOME=/opt/android_sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME 
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:/opt/android_sdk/cmdline-tools/latest/bin
+mkdir /shared/seuusername
+avdmanager -v create avd -f -n android_react -k "system-images;android-31;google_apis;x86_64" -c 2000M -p /shared/seuusername
 ```
 
-# Listar AVDs disponíveis
+## 8. Listar SDKs instalados
+
+```console
+sdkmanager --list_installed
+```
+
+## 9. Listar AVDs disponíveis
 
 ```console
 $ emulator -list-avds
@@ -68,25 +94,30 @@ ou
 $ avdmanager list
 ```
 
-# Criar uma AVD
+## 10. Iniciando o emulador
 
 ```console
-$ mkdir /shared/seuusername
-$ avdmanager -v create avd -f -n android_react -k "system-images;android-31;google_apis;x86_64" -c 2000M -p /shared/seuusername
+emulator -avd android_react
 ```
 
-# Iniciando o emulador
+## 11. Atualizar pacotes
 
 ```console
-$ emulator -avd android_react
+sdkmanager --update
 ```
 
-# Atualizar pacotes
+## Outras informações
+
+## Habilitando os botões no Emulador
+
+* Considerando que o AVD foi instalado em /share/seunomeusuario:
+
 ```console
-$ sdkmanager --update
+sed -i 's/hw.keyboard = no/hw.keyboard = yes/g' /share/seunomeusuario/avd/config.ini
 ```
 
-# Desabilitar o IPV6
+### Desabilitar o IPV6
+
 * https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html
 
 ```console
@@ -98,9 +129,22 @@ $ echo 'net.ipv6.conf.eno1.disable_ipv6 = 1' >> /etc/sysctl.conf
 $ sysctl -p
 ```
 
-# Reabilitando o IPv6
+### Instalar KVM (opcional)
+
+ ```console
+apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+ ```
+
+* https://developer.android.com/studio/run/emulator-acceleration?hl=pt-br
+
+### Adicionar usuário ao grupo kvm
 
 ```console
-$ sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /etc/sysctl.conf
+gpasswd -a joao kvm
 ```
 
+### Reabilitando o IPv6
+
+```console
+sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /etc/sysctl.conf
+```

@@ -4,7 +4,7 @@
 ```console
 $ emulator -avd android_react
 ```
-2. Crie o arquivo
+2. Crie o arquivo local.properties
 ```console
 $ cd PASTA_DO_SEU_PROJETO
 $ pico android/local.properties
