@@ -38,7 +38,7 @@ snap install webstorm --classic
 ## 4. Instalar o android sdk
 
 * Baixar o commandline-tools na seção de download do android studio
-* https://developer.android.com/studio
+* <https://developer.android.com/studio>
 
 ```console
 cd /opt
@@ -73,7 +73,7 @@ echo 'export PATH=$PATH:/opt/android_sdk/cmdline-tools/latest/bin' >> /etc/bash.
 
 ## 7. Criar uma AVD
 
-* Considerando que você está usando uma máquina do Lab K05-s. 
+* Considerando que você está usando uma máquina do Lab K05-s.
 
 ```console
 mkdir /shared/seuusername
@@ -120,7 +120,7 @@ sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' /share/seunomeusuario/avd/config.ini
 
 ### Desabilitar o IPV6
 
-* https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html
+* <https://www.itzgeek.com/how-tos/linux/debian/how-to-disable-ipv6-on-debian-9-ubuntu-16-04.html>
 
 ```console
 $ echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf
@@ -137,7 +137,7 @@ $ sysctl -p
 apt-get install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
  ```
 
-* https://developer.android.com/studio/run/emulator-acceleration?hl=pt-br
+* <https://developer.android.com/studio/run/emulator-acceleration?hl=pt-br>
 
 ### Adicionar usuário ao grupo kvm
 
@@ -170,10 +170,14 @@ sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /e
 * Code Spell Checker
 * change-case
 
+* <https://www.developers-zone.com/best-way-to-create-react-native-app-in-visual-studio-code/#:~:text=At%20the%20very%20first%20before,able%20to%20debug%20your%20code.>
+
+## Fonte Jetbrains Mono
+
+* <https://www.jetbrains.com/lp/mono/#how-to-install>
+
 ## OUTRAS INFORMAÇÕES
 
-> Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian 
-
+> Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian
 > Data: Fevereiro/2023
-
 > Baixar script: [SHELL SCRIPT](https://raw.githubusercontent.com/rafaelperazzo/cc0043/master/install.node.sh)
