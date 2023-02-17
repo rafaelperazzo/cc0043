@@ -169,6 +169,7 @@ sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /e
 * npm Intellisense
 * Code Spell Checker
 * change-case
+* Brazilian Portuguese - Code Spell Checker
 
 * <https://www.developers-zone.com/best-way-to-create-react-native-app-in-visual-studio-code/#:~:text=At%20the%20very%20first%20before,able%20to%20debug%20your%20code.>
 
@@ -183,14 +184,21 @@ cd jetbrains_fonts
 wget -O JetBrainsMono-2.304.zip https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
 unzip JetBrainsMono-2.304.zip
 cd fonts
-cp * /usr/share/fonts
+cp -R * /usr/share/fonts
 fc-cache -f -v
 ```
 
 > <https://www.jetbrains.com/lp/mono/#how-to-install>
 
+## VsCode -> Português
+
+* Instale a extensão Brazilian Portuguese Language Pack
+* Nas configurações (Arquivo - Configurações) ou (File - Settings) procure por cSpell.language e coloque "en,PT_BR"
+
+[Referência](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese-brazilian)
+
 ## OUTRAS INFORMAÇÕES
 
-> Testado no linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian
+> Testado no Linux Mint 21. Deve funcionar em outras distribuições baseadas em Ubuntu/ Debian
 > Data: Fevereiro/2023
 > Baixar script: [SHELL SCRIPT](https://raw.githubusercontent.com/rafaelperazzo/cc0043/master/install.node.sh)

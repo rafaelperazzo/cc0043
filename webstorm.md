@@ -1,4 +1,4 @@
-# WEBSOTORM
+# WEBSTORM
 
 ## Executando o app no webstorm
 
