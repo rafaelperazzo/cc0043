@@ -36,3 +36,13 @@ mv /etc/apt/preferences.d/nosnap.pref ~/root/nosnap.backup
 apt update
 apt install snapd
 snap install webstorm --classic
+
+# Jetbrains fonts
+cd /opt
+mkdir jetbrains_fonts
+cd jetbrains_fonts
+wget -O JetBrainsMono-2.304.zip https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
+unzip JetBrainsMono-2.304.zip
+cd fonts
+cp * /usr/share/fonts
+fc-cache -f -v
