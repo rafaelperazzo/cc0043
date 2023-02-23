@@ -1,5 +1,6 @@
-import requests
 import json
+
+import requests
 
 link = "https://primeiro-1b090-default-rtdb.firebaseio.com/"
 
