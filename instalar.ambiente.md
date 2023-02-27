@@ -113,7 +113,7 @@ sdkmanager --update
 * Considerando que o AVD foi instalado em /share/seunomeusuario:
 
 ```console
-sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' /share/seunomeusuario/avd/config.ini
+sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' /share/seunomeusuario/config.ini
 ```
 
 ![Imagem](https://i.stack.imgur.com/yjdw8.jpg)
@@ -164,7 +164,6 @@ sed 's/net.ipv6.conf.lo.disable_ipv6 = 1/net.ipv6.conf.lo.disable_ipv6 = 0/g' /e
 * TO DO Highlight
 * Bracket Pair Colorizer
 * markdownlint
-* Settings Sync
 * Search node_modules
 * npm Intellisense
 * Code Spell Checker

@@ -13,7 +13,6 @@
 * TO DO Highlight
 * Bracket Pair Colorizer
 * markdownlint
-* Settings Sync
 * Search node_modules
 * npm Intellisense
 * Code Spell Checker
