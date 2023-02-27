@@ -66,4 +66,4 @@ npx react-native init NOME_DO_SEU_PROJETO
 npx react-native init NOME_DO_SEU_PROJETO --version 0.70.0
 ```
 
-## Abrar a pasta do projeto no VsCode e let's code!
+## Abra a pasta do projeto no VsCode e let's code!
