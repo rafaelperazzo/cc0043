@@ -15,6 +15,12 @@ mkdir /shared/seuusername
 avdmanager -v create avd -f -n android_react -k "system-images;android-31;google_apis;x86_64" -c 2000M -p /shared/seuusername
 ```
 
+* Habilitar os botões do emulador
+
+```console
+sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' /share/seunomeusuario/config.ini
+```
+
 * Iniciar o emulador
 
 ```console
@@ -39,6 +45,11 @@ emulator -avd android_react
 * Code Spell Checker
 * change-case
 * Brazilian Portuguese - Code Spell Checker
+
+## VsCode -> Português
+
+* Instale a extensão Brazilian Portuguese Language Pack
+* Nas configurações (Arquivo - Configurações) ou (File - Settings) procure por cSpell.language e coloque "en,PT_BR"
 
 ## Verificar se o node está instalado
 
