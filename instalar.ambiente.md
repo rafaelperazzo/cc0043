@@ -8,6 +8,7 @@
 apt-get install openjdk-11-jre openjdk-11-jdk unzip
 echo 'net.ipv6.conf.all.disable_ipv6 = 1' >> /etc/sysctl.conf
 sysctl -p
+echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 ```
 
 ## 1. Instalar o node
@@ -51,7 +52,8 @@ mkdir latest
 mv * latest
 cd latest/bin
 ./sdkmanager "system-images;android-31;google_apis;x86_64"
-./sdkmanager "build-tools;31.0.0" "ndk-bundle" "platform-tools" "platforms;android-31" "tools"
+./sdkmanager "build-tools;31.0.0" "ndk-bundle" "platform-tools" "platforms;android-31" "tools" "platforms;android-33" "build-tools;30.0.3"
+
 ```
 
 ## 5. Colocar o SDK do Android no PATH
@@ -113,7 +115,13 @@ sdkmanager --update
 * Considerando que o AVD foi instalado em /share/seunomeusuario:
 
 ```console
-sed -i 's/hw.keyboard=no/hw.keyboard=yes/g' /share/seunomeusuario/config.ini
+sed -i 's/hw.keyboard = no/hw.keyboard = yes/g' /share/seunomeusuario/config.ini
+```
+
+## Ajustando a memória RAM do emulador
+
+```console
+sed -i 's/hw.ramSize = 96M/hw.ramSize = 1024M/g' /shared/avd/config.ini
 ```
 
 ![Imagem](https://i.stack.imgur.com/yjdw8.jpg)
