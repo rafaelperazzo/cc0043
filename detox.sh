@@ -15,7 +15,7 @@ cp android/app/src/main/AndroidManifest.xml android/app/src/main/AndroidManifest
 #INÍCIO
 PACOTE=projetoauladetox
 sed -i "s/avdName:.*/avdName: 'android_react'/g" .detoxrc.js 
-sed -i "9i kotlinVersion = 'X.Y.Z'" android/build.gradle
+sed -i "9i kotlinVersion = '1.7.21'" android/build.gradle
 sed -i "20i classpath(\"org.jetbrains.kotlin:kotlin-gradle-plugin:\$kotlinVersion\")" android/build.gradle
 sed -i "49i maven {\n url(\"\$rootDir/../node_modules/detox/Detox-android\")\n }" android/build.gradle
 sed -i "143i testBuildType System.getProperty('testBuildType', 'debug')" android/app/build.gradle
