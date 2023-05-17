@@ -1,16 +1,17 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, StatusBar, Text, View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Auth from './autenticacao';
 
-function Tela1({navigation, route}): JSX.Element {
+function Tela1(): JSX.Element {
   return <Auth />;
 }
 
-function Home({navigation}): JSX.Element {
+function Home({navigation}: any): JSX.Element {
   return (
     <View>
+      <StatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
       <Text>Tela principal</Text>
       <Button
         title="Autenticação"
