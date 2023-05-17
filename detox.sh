@@ -1,7 +1,7 @@
-#npm install detox-cli --global
-#npm install "jest@^29" --save-dev
-#npm install detox --save-dev
-#detox init
+npm install detox-cli --global
+npm install "jest@^29" --save-dev
+npm install detox --save-dev
+detox init
 #RESTURANDO ARQUIVOS
 cp .detoxrc.js.old .detoxrc.js
 cp android/build.gradle.old android/build.gradle
@@ -37,4 +37,4 @@ mkdir -p android/app/src/main/res/xml/
 touch android/app/src/main/res/xml/network_security_config.xml
 cat config.txt >> android/app/src/main/res/xml/network_security_config.xml
 sed -i "24i android:networkSecurityConfig=\"@xml/network_security_config\">" android/app/src/main/AndroidManifest.xml
-#detox build --configuration android.emu.debug
+detox build --configuration android.emu.debug
