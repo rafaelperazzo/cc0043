@@ -14,7 +14,7 @@ cp android/app/build.gradle android/app/build.gradle.old
 cp android/app/src/main/AndroidManifest.xml android/app/src/main/AndroidManifest.xml.old
 #INÍCIO
 PACOTE=projetoauladetox
-sed -i "s/avdName:.*/avdName=android_react/g" .detoxrc.js 
+sed -i "s/avdName:.*/avdName: 'android_react'/g" .detoxrc.js 
 sed -i "9i kotlinVersion = 'X.Y.Z'" android/build.gradle
 sed -i "20i classpath(\"org.jetbrains.kotlin:kotlin-gradle-plugin:\$kotlinVersion\")" android/build.gradle
 sed -i "49i maven {\n url(\"\$rootDir/../node_modules/detox/Detox-android\")\n }" android/build.gradle
