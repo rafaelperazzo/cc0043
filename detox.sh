@@ -15,6 +15,9 @@ cp .detoxrc.js .detoxrc.js.old
 cp android/build.gradle android/build.gradle.old
 cp android/app/build.gradle android/app/build.gradle.old
 cp android/app/src/main/AndroidManifest.xml android/app/src/main/AndroidManifest.xml.old
+#Baixando arquivos auxiliares
+wget https://raw.githubusercontent.com/rafaelperazzo/cc0043/master/config.txt
+wget https://raw.githubusercontent.com/rafaelperazzo/cc0043/master/javafile.txt
 #INÍCIO
 #Step 3: Device configs
 PACOTE="$($echo ls android/app/src/main/java/com/)"
