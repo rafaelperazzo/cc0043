@@ -1,6 +1,6 @@
 # Script para preparação do projeto para o framework Detox
 
-## Baixar o arquivos abaixo para a pasta do projeto
+## Baixar o arquivo abaixo para a pasta do projeto
 
 * detox.sh
 
