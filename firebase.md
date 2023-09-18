@@ -38,4 +38,4 @@ Em seguida adicione  no arquivo NOME_DO_PROJETO/android/app/build.gradle
 apply plugin: 'com.google.gms.google-services'
 ```
 
-## 5. Abra seu projeto no WebStorm
+## 5. Abra seu projeto no WebStorm/VsCode
