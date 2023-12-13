@@ -1,3 +1,4 @@
+```console
 import * as React from 'react';
 import {View,StyleSheet} from 'react-native';
 import {Text,Button,TextInput} from 'react-native-paper';
@@ -60,3 +61,4 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+```
