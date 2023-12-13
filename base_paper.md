@@ -1,4 +1,4 @@
-```console
+```javascript
 import * as React from 'react';
 import {View,StyleSheet} from 'react-native';
 import {Text,Button,TextInput} from 'react-native-paper';
